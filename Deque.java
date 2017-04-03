@@ -1,4 +1,4 @@
-public interface Deque<T> implements Queue<T> {
+public interface Deque<T> extends Queue<T> {
 
     //~~~~~~~~~~~~~~~~~~begin Queue interface subset~~~~~~~~~~~~~~~~~~
     //means of removing an element from collection:

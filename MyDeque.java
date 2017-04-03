@@ -1,4 +1,4 @@
-public class MyDeque<T>{// implements Deque<T>{
+public class MyDeque<T> implements Deque<T>{
 
     /*==================Illustration=======================
 
