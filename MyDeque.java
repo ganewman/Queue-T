@@ -101,11 +101,25 @@ public class MyDeque<T> implements Deque<T>{
 	DLLNode<T> temp = _first;
 	return temp.getCargo();
     }
+
+    public boolean contains(Object o){
+	boolean retBool = false;
+	DLLNode temp = _last;
+	while (temp.getNext() != null){
+	    if (temp.getCargo().equals(o)){
+		retBool = true;
+	    }
+	    temp = temp.getNext();
+	}
+	return retBool;
+    }
+
     /*---------------------------------------
     public T removeFirst();
     public T removeLast();
     public T peekLast();
     public int size();
+    public boolean contains(Object o);
 
     //Queue compliance methods
     public T dequeue();
@@ -138,6 +152,7 @@ public class MyDeque<T> implements Deque<T>{
 	System.out.println(Bar.isEmpty());
 	System.out.println(empty.isEmpty());
 	System.out.println(Bar);
-	System.out.println(Bar.peekFront());
+	System.out.println(Bar.contains("there")); // should return true
+	System.out.println(Bar.contains("hi")); // should return false
     }
 } //end class
