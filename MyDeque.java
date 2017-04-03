@@ -26,56 +26,57 @@ public class MyDeque<T> implements Deque<T>{
     public String toString(){
 	String ret = "";
 	DLLNode look = _first;
-	while(look != null){
-	    ret += look + " ";
-	    look = look.getPrev();
+	while(look != null){ // iterate through deque until you read the end (pointer to null);
+	    ret += look + " "; // add each node to retString 
+	    look = look.getPrev(); // increment current place in deque
 	}
 	return ret;
     }
     
     //methods
     public void addFirst(T x){
-	if( _size == 0){
-	    _first = new DLLNode(x,null,null);
-	    _last = _first;}
-	else{
-	    _first.setNext(new DLLNode<T>(x,_first,null));
-	    _first = _first.getNext();
+	if( _size == 0){ // if deque has no nodes yet
+	    _first = new DLLNode(x,null,null); // the node being added will be the first and last node
+	    _last = _first; 
 	}
-	_size += 1;
+	else { // if deque already has size > 0
+	    _first.setNext(new DLLNode<T>(x,_first,null)); // add a new node before the current first node
+	    _first = _first.getNext(); // the node just added is now the first node
+	}
+	_size += 1; // increment deque size by 1
     }
  
     public void addLast(T x){
-	if( _size == 0){
-	    _first = new DLLNode(x,null,null);
+	if( _size == 0){ // if deque has no nodes yet
+	    _first = new DLLNode(x,null,null); // the node being added will be the first and last node
 	    _last = _first;}
-	else{
-	    _last.setPrev(new DLLNode<T>(x,null,_last));
-	    _last = _last.getPrev();
+	else{ // if deque already has size > 0
+	    _last.setPrev(new DLLNode<T>(x,null,_last)); // add the new node after the current last node
+	    _last = _last.getPrev(); // the node just added is now the last node
 	}
-	_size += 1;
+	_size += 1; // increment deque size by one
     }
 
     //remove methods assume queue ! empty
     public T removeFirst(){
-	DLLNode<T> temp = _first;
-	_first = _first.getPrev();
-	_first.setNext(null);
-	_size -= 1;
-	return temp.getCargo();
+	DLLNode<T> temp = _first; // store node being removed
+	_first = _first.getPrev(); // set first equal to the current second node
+	_first.setNext(null); // set its next node to null
+	_size -= 1; // decrement size by one
+	return temp.getCargo(); 
     }
 
     public T removeLast(){
-	DLLNode<T> temp = _last;
-	_last = _last.getNext();
-	_last.setPrev(null);
-	_size -= 1;
+	DLLNode<T> temp = _last; // store node being removed
+	_last = _last.getNext(); // set last node equal to current penultimate node
+	_last.setPrev(null); // set its previous node to null
+	_size -= 1; // decrement size by one
 	return temp.getCargo();
     }
 
     public T peekLast(){
-	DLLNode<T> temp = _last;
-	return temp.getCargo();
+	DLLNode<T> temp = _last; // store last node
+	return temp.getCargo(); // return its cargo
     }
 
     public int size(){
@@ -98,18 +99,18 @@ public class MyDeque<T> implements Deque<T>{
     }
 
     public T peekFront(){
-	DLLNode<T> temp = _first;
-	return temp.getCargo();
+	DLLNode<T> temp = _first; // store first node
+	return temp.getCargo(); // return its cargo
     }
 
     public boolean contains(Object o){
-	boolean retBool = false;
+	boolean retBool = false; // return false unless target is found
 	DLLNode temp = _last;
-	while (temp.getNext() != null){
-	    if (temp.getCargo().equals(o)){
-		retBool = true;
+	while (temp != null){ // iterate to the end of the deque
+	    if (temp.getCargo().equals(o)){ // check cargo of each node against the target
+		retBool = true; // if a match is found, target is present in the deque; return true
 	    }
-	    temp = temp.getNext();
+	    temp = temp.getNext(); // increment by moving over one node in the deque
 	}
 	return retBool;
     }
