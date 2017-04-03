@@ -28,6 +28,8 @@ public interface Deque<T> extends Queue<T> {
 
     public int size();
 
+    public boolean contains(Object o);
+
     /* Methods to possibly add later
        
 
