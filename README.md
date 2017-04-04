@@ -3,6 +3,7 @@
 ## APCS pd 3, Lab02
 
 ## Deque Interface
+We chose a doubly linked node based structure because we felt that it was easiest to implement queue methods
 The Deque interface specifies methods required for a double-ended Queue and extends the Queue interface provided by the AP. Our state of the art enterprise Deque technology utilizes the following methods:
 
 ### Methods for compliance with Queue
