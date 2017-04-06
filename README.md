@@ -3,8 +3,10 @@
 ## APCS pd 3, Lab02
 
 ## Deque Interface
-The Deque interface specifies methods required for a double-ended Queue and extends the Queue interface provided by the AP. Our state of the art enterprise Deque technology utilizes the following methods:
+The Deque interface specifies methods required for a double-ended Queue and extends the Queue interface provided by the AP. Our state of the art enterprise Deque technology is explained below:
 
+
+***
 ### Structure
 ***
 We chose a doubly linked node based structure because we felt that it was most suited for an efficient implementation of deque and queue methods. 
@@ -15,6 +17,8 @@ Furthermore, the nature of a Deque requires that adding and removing elements mu
 
 One great advantage of the Array or AL is its ability to fetch elements at any index in constant time. A node-based collection must traverse in linear time to find a given index. However, the Deque should only be accessible at the front and the end, not at any index. Pointers can be maintained on either end of the list with no further need to access the interior. Thus the advantage of using an Array or AL is diminished for this specific application.
 
+
+***
 ### Methods for compliance with Queue
 ***
 #### public T dequeue()
@@ -27,7 +31,7 @@ Returns whether the deque is empty
 Returns first element of Queue without DQing it.
 
 
-
+***
 ### Additional Deque interface methods
 ***
 #### public void addFirst(T x)
@@ -45,3 +49,10 @@ Returns the number of elements in the Deque
 #### public boolean contains(Object O)
 Returns whether the Deque contains the given object
 
+
+### Recent Changes
+***
+1. Removed unnecessary files - advised by QQ
+2. Modified README and improved explanation of structure - advised by QQ
+
+QQ's DequeTester appears to run without error, and the results are as expected.
