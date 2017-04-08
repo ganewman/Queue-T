@@ -54,5 +54,7 @@ Returns whether the Deque contains the given object
 ***
 1. Removed unnecessary files - advised by QQ
 2. Modified README and improved explanation of structure - advised by QQ
+3. Edited removeFirst() and removeLast() methods to work for edge case - advised by StackedDeque
 
 QQ's DequeTester appears to run without error, and the results are as expected.
+StackedDeque's DequeTester2 advised a few fixes to remove methods in order to account for last node being removed.
