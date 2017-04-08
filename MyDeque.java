@@ -60,17 +60,31 @@ public class MyDeque<T> implements Deque<T>{
     //remove methods assume queue ! empty
     public T removeFirst(){
 	DLLNode<T> temp = _first; // store node being removed
-	_first = _first.getPrev(); // set first equal to the current second node
-	_first.setNext(null); // set its next node to null
-	_size -= 1; // decrement size by one
+	if (_size == 1){
+	    _size = 0;
+	    _first = null;
+	    _last = null;
+	}
+	else{
+	    _first = _first.getPrev(); // set first equal to the current second node
+	    _first.setNext(null); // set its next node to null
+	    _size -= 1; // decrement size by one
+	}
 	return temp.getCargo(); 
     }
 
     public T removeLast(){
 	DLLNode<T> temp = _last; // store node being removed
-	_last = _last.getNext(); // set last node equal to current penultimate node
-	_last.setPrev(null); // set its previous node to null
-	_size -= 1; // decrement size by one
+	if (_size == 1){
+	    _size = 0;
+	    _first = null;
+	    _last = null;
+	}
+	else{
+	    _last = _last.getNext(); // set last node equal to current penultimate node
+	    _last.setPrev(null); // set its previous node to null
+	    _size -= 1; // decrement size by one
+	}
 	return temp.getCargo();
     }
 

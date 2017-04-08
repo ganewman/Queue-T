@@ -1,14 +1,14 @@
-import java.util.Iterator;
+//import java.util.Iterator;
 
-public class LLDequeDriver{
+public class DequeTester2{
 
     public static void main(String[] args){
-	Deque<String> test = new LLDeque<String>();
+	Deque<String> test = new MyDeque<String>();
 
 	//Adding to the Deque
-	test.add("for");
-	test.add("vive");
-	test.add("zix");
+	//test.add("for");
+	//test.add("vive");
+	//test.add("zix");
 	test.addFirst("tree");
 	test.addFirst("too");
 	test.addFirst("juan");
@@ -20,14 +20,15 @@ public class LLDequeDriver{
 
 	//Tests for peek()
 	System.out.println("\nNow testing peek() methods");
-	System.out.println(test.peek());
+	//System.out.println(test.peek());
 	System.out.println(test.peekLast());
 
+	/*
 	//Tests for get()
 	System.out.println("\nNow testing get() methods");
 	System.out.println(test.getFirst());	
 	System.out.println(test.getLast());
-	
+
 	//Tests for Iterators
 	System.out.println("\nNow printing ascending iterator");
 	for(Iterator i = test.iterator(); i.hasNext(); ){
@@ -38,19 +39,19 @@ public class LLDequeDriver{
 	for(Iterator k = test.descendingIterator(); k.hasNext(); ){
 	    System.out.println(k.next());
 	}
-	
+	*/
 	
 	//Test for contains() method
 	System.out.println("\nNow testing contains() method");
 	String inDeque = "weven";
 	String notInDeque = "ate";
 
-	test.add(inDeque);
+	//test.add(inDeque);
 
 	System.out.println("\n" + test.contains(inDeque));
 	System.out.println("\n" + test.contains(notInDeque));
 
-
+	/*
 	//Tests for Remove Methods
 	System.out.println("\nNow testing remove() method");
 	//Juan 
@@ -80,6 +81,7 @@ public class LLDequeDriver{
 	System.out.println("Now removing zix");
 	test.remove("zix");
 	System.out.println(test);
+	*/
 	
 	System.out.println("\nNow testing removeLast() method");
 	//Weven
@@ -95,6 +97,7 @@ public class LLDequeDriver{
 	System.out.println(test.removeLast());
 	System.out.println(test);
 
+	/*
 	//Remove Iterator Tests
 	Deque<Integer> test2 = new LLDeque<Integer>();
 	test2.add(1);
@@ -129,5 +132,6 @@ public class LLDequeDriver{
 	}
 
 	System.out.println(test3);     
+	*/
     }
 }
